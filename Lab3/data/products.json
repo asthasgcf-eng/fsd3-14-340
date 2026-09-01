@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15",
+    "brand": "Apple",
+    "price": 69999,
+    "ram": "6GB",
+    "storage": "128GB",
+    "camera": "48MP",
+    "battery": "3349mAh",
+    "display": "6.1-inch OLED",
+    "rating": 4.6
+  },
+  {
+    "id": 2,
+    "name": "Galaxy S24",
+    "brand": "Samsung",
+    "price": 74999,
+    "ram": "8GB",
+    "storage": "256GB",
+    "camera": "50MP",
+    "battery": "4000mAh",
+    "display": "6.2-inch AMOLED",
+    "rating": 4.7
+  },
+  {
+    "id": 3,
+    "name": "Pixel 8",
+    "brand": "Google",
+    "price": 58999,
+    "ram": "8GB",
+    "storage": "128GB",
+    "camera": "50MP",
+    "battery": "4575mAh",
+    "display": "6.2-inch OLED",
+    "rating": 4.5
+  },
+  {
+    "id": 4,
+    "name": "OnePlus 12",
+    "brand": "OnePlus",
+    "price": 64999,
+    "ram": "12GB",
+    "storage": "256GB",
+    "camera": "50MP",
+    "battery": "5400mAh",
+    "display": "6.82-inch AMOLED",
+    "rating": 4.6
+  },
+  {
+    "id": 5,
+    "name": "Nothing Phone 2",
+    "brand": "Nothing",
+    "price": 44999,
+    "ram": "12GB",
+    "storage": "256GB",
+    "camera": "50MP",
+    "battery": "4700mAh",
+    "display": "6.7-inch OLED",
+    "rating": 4.4
+  },
+  {
+    "id": 6,
+    "name": "Xiaomi 14",
+    "brand": "Xiaomi",
+    "price": 69999,
+    "ram": "12GB",
+    "storage": "512GB",
+    "camera": "50MP",
+    "battery": "4610mAh",
+    "display": "6.36-inch AMOLED",
+    "rating": 4.5
+  },
+  {
+    "id": 7,
+    "name": "Vivo V30",
+    "brand": "Vivo",
+    "price": 33999,
+    "ram": "8GB",
+    "storage": "128GB",
+    "camera": "50MP",
+    "battery": "5000mAh",
+    "display": "6.78-inch AMOLED",
+    "rating": 4.3
+  },
+  {
+    "id": 8,
+    "name": "Realme GT 6",
+    "brand": "Realme",
+    "price": 40999,
+    "ram": "8GB",
+    "storage": "256GB",
+    "camera": "50MP",
+    "battery": "5500mAh",
+    "display": "6.78-inch AMOLED",
+    "rating": 4.4
+  },
+  {
+    "id": 9,
+    "name": "Motorola Edge 50 Pro",
+    "brand": "Motorola",
+    "price": 31999,
+    "ram": "8GB",
+    "storage": "256GB",
+    "camera": "50MP",
+    "battery": "4500mAh",
+    "display": "6.7-inch pOLED",
+    "rating": 4.3
+  },
+  {
+    "id": 10,
+    "name": "Redmi Note 13 Pro",
+    "brand": "Redmi",
+    "price": 29999,
+    "ram": "8GB",
+    "storage": "256GB",
+    "camera": "200MP",
+    "battery": "5100mAh",
+    "display": "6.67-inch AMOLED",
+    "rating": 4.2
+  }
+]
