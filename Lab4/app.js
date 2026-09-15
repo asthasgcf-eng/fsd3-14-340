@@ -47,6 +47,7 @@ const server = http.createServer(async (req, res) => {
   const method = req.method;
 
   console.log("Pathname:", pathname, "Method:", method);
+});
 
   // GET all teams
   if (pathname === "/api/v1/teams" && method === "GET") {
@@ -123,7 +124,51 @@ const server = http.createServer(async (req, res) => {
     });
   }
 
+  // PUT - update team
+  if (teamRoute && method === "PUT") {
+    try {
+      const id = Number(teamRoute[1]);
+      const existingTeam = getTeamById(id);
+
+      if (!existingTeam) {
+        return sendJson(res, 404, {
+          message: `Team with ID ${id} not found`,
+        });
+      }
+
+      const { tname, tl, members } = await parseJSONBody(req);
+
+      if (
+        members !== undefined &&
+        (typeof members !== "number" ||
+          !Number.isInteger(members) ||
+          members <= 0)
+      ) {
+        return sendJson(res, 400, {
+          message: "Members must be a positive integer",
+        });
+      }
+
+      const updatedTeam = updateTeam(id, {
+        ...(tname !== undefined && { tname }),
+        ...(tl !== undefined && { tl }),
+        ...(members !== undefined && { members }),
+      });
+
+      return sendJson(res, 200, {
+        message: "Team updated successfully",
+        data: updatedTeam,
+      });
+    } catch (error) {
+      return sendJson(res, 400, {
+        message: "Invalid JSON body",
+      });
+    }
+  }
+
   
+
+
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
