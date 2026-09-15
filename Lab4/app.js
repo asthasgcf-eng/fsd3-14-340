@@ -166,9 +166,28 @@ const server = http.createServer(async (req, res) => {
     }
   }
 
-  
+  // DELETE team
+  if (teamRoute && method === "DELETE") {
+    const id = Number(teamRoute[1]);
+    const deletedTeam = deleteTeam(id);
 
+    if (!deletedTeam) {
+      return sendJson(res, 404, {
+        message: `Team with ID ${id} not found`,
+      });
+    }
 
+    return sendJson(res, 200, {
+      message: "Team deleted successfully",
+      data: deletedTeam,
+    });
+  }
+
+  // Route not found
+  return sendJson(res, 404, {
+    message: "Route not found",
+
+  });
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
