@@ -123,70 +123,7 @@ const server = http.createServer(async (req, res) => {
     });
   }
 
-  // PUT - update team
-  if (teamRoute && method === "PUT") {
-    try {
-      const id = Number(teamRoute[1]);
-      const existingTeam = getTeamById(id);
-
-      if (!existingTeam) {
-        return sendJson(res, 404, {
-          message: `Team with ID ${id} not found`,
-        });
-      }
-
-      const { tname, tl, members } = await parseJSONBody(req);
-
-      if (
-        members !== undefined &&
-        (typeof members !== "number" ||
-          !Number.isInteger(members) ||
-          members <= 0)
-      ) {
-        return sendJson(res, 400, {
-          message: "Members must be a positive integer",
-        });
-      }
-
-      const updatedTeam = updateTeam(id, {
-        ...(tname !== undefined && { tname }),
-        ...(tl !== undefined && { tl }),
-        ...(members !== undefined && { members }),
-      });
-
-      return sendJson(res, 200, {
-        message: "Team updated successfully",
-        data: updatedTeam,
-      });
-    } catch (error) {
-      return sendJson(res, 400, {
-        message: "Invalid JSON body",
-      });
-    }
-  }
-
-  // DELETE team
-  if (teamRoute && method === "DELETE") {
-    const id = Number(teamRoute[1]);
-    const deletedTeam = deleteTeam(id);
-
-    if (!deletedTeam) {
-      return sendJson(res, 404, {
-        message: `Team with ID ${id} not found`,
-      });
-    }
-
-    return sendJson(res, 200, {
-      message: "Team deleted successfully",
-      data: deletedTeam,
-    });
-  }
-
-  // Route not found
-  return sendJson(res, 404, {
-    message: "Route not found",
-  });
-});
+  
 
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
