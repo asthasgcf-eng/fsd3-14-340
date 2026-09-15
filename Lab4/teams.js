@@ -1,37 +1,69 @@
-let teams=[
-    {id:1,
-        tname:"ByteUs", 
-        tl:"Arsh", 
-        email:"arsh07@gmail.com",
-        members:6
-    },
-    {id:2,
-        tname:"CodeWarriors",
-        t2:"Aman",
-        email:"aman00@gmail.com",
-        members:6
-    },
-]
+let teams = [
+  {
+    id: 1,
+    tname: "Byte Us",
+    tl: "Arsh",
+    members: 6,
+  },
+  {
+    id: 2,
+    tname: "Code Crew",
+    tl: "Astha",
+    members: 5,
+  },
+];
 
-let nextId=3;
-export const getAllTeams=()=>teams;
-export const getTeamById=(id)=> teams.find((team)=>team.id===id);
-export const addTeam=(newTeam)=>{
-    const team={id:nextId++, ...newTeam};
-    teams.push(team);
-    return team;
+// Get all teams
+export const getAllTeams = () => {
+  return teams;
 };
 
-export const updateTeamById=(id, updateTeam)=>{
-    const team=getTeamById(id);
-    if(!team) return null;
-    Object.assign(team, updateTeam);
-    return team;
+// Get one team by ID
+export const getTeamById = (id) => {
+  return teams.find((team) => team.id === id);
 };
 
-export const deleteTeamByid=(id)=>{
-    const index=teams.findIndex((team)=>team.id===id);
-    if(index===-1) return false;
-    teams.splice(index, 1);
-    return true;
+// Add a new team
+export const addTeam = (teamData) => {
+  const newId =
+    teams.length > 0
+      ? Math.max(...teams.map((team) => team.id)) + 1
+      : 1;
+
+  const newTeam = {
+    id: newId,
+    ...teamData,
+  };
+
+  teams.push(newTeam);
+  return newTeam;
+};
+
+// Update an existing team
+export const updateTeam = (id, updatedData) => {
+  const teamIndex = teams.findIndex((team) => team.id === id);
+
+  if (teamIndex === -1) {
+    return null;
+  }
+
+  teams[teamIndex] = {
+    ...teams[teamIndex],
+    ...updatedData,
+    id,
+  };
+
+  return teams[teamIndex];
+};
+
+// Delete a team
+export const deleteTeam = (id) => {
+  const teamIndex = teams.findIndex((team) => team.id === id);
+
+  if (teamIndex === -1) {
+    return null;
+  }
+
+  const deletedTeam = teams.splice(teamIndex, 1)[0];
+  return deletedTeam;
 };
