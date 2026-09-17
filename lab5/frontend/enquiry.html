@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquiry | LapTech</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #222;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #111827;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #4f9cff;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #4f9cff;
+        }
+
+        /* Page Header */
+        .page-header {
+            height: 280px;
+
+            background: linear-gradient(
+                rgba(0, 0, 0, 0.6),
+                rgba(0, 0, 0, 0.6)
+            ),
+            url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+            color: white;
+        }
+
+        .page-header h1 {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            font-size: 18px;
+        }
+
+        /* Main Container */
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 50px auto;
+        }
+
+        /* Enquiry Layout */
+        .enquiry-box {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 30px;
+        }
+
+        /* Contact Information */
+        .contact-info {
+            background-color: #111827;
+            color: white;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .contact-info h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .contact-info > p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 25px;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            color: #bbb;
+        }
+
+        /* Form */
+        .form-box {
+            background-color: white;
+            padding: 35px;
+            border-radius: 12px;
+
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-box h2 {
+            margin-bottom: 25px;
+            font-size: 28px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+
+            border: 1px solid #ddd;
+            border-radius: 6px;
+
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4f9cff;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+
+            border: none;
+            border-radius: 6px;
+
+            background-color: #4f9cff;
+            color: white;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #2879d8;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            color: #bbb;
+            margin-top: 8px;
+        }
+
+        /* Responsive */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .enquiry-box {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            .page-header h1 {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+
+        <div class="logo">
+            Lap<span>Tech</span>
+        </div>
+
+        <ul>
+            <li><a href="laptops.html">Home</a></li>
+            <li><a href="laptops.html#laptops">Laptops</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Page Header -->
+    <section class="page-header">
+
+        <div>
+            <h1>Make an Enquiry</h1>
+            <p>Have questions? We are here to help.</p>
+        </div>
+
+    </section>
+
+
+    <!-- Enquiry Section -->
+    <section class="container">
+
+        <div class="enquiry-box">
+
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+
+                <h2>Get In Touch</h2>
+
+                <p>
+                    Looking for a laptop but confused about which
+                    one to choose? Send us your requirements and
+                    our team will help you find a suitable option.
+                </p>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📍</div>
+
+                    <div>
+                        <h3>Address</h3>
+                        <p>Technology Street, New Delhi, India</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">📞</div>
+
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 98765 43210</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">✉️</div>
+
+                    <div>
+                        <h3>Email</h3>
+                        <p>support@laptech.com</p>
+                    </div>
+
+                </div>
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">🕒</div>
+
+                    <div>
+                        <h3>Working Hours</h3>
+                        <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Enquiry Form -->
+            <div class="form-box">
+
+                <h2>Enquiry Form</h2>
+
+                <form>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="Enter phone number"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="category">
+                                Laptop Category
+                            </label>
+
+                            <select id="category">
+
+                                <option value="">
+                                    Select category
+                                </option>
+
+                                <option>
+                                    Student Laptop
+                                </option>
+
+                                <option>
+                                    Business Laptop
+                                </option>
+
+                                <option>
+                                    Gaming Laptop
+                                </option>
+
+                                <option>
+                                    Professional Laptop
+                                </option>
+
+                                <option>
+                                    Laptop for Coding
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="budget">
+                            Your Budget
+                        </label>
+
+                        <select id="budget">
+
+                            <option value="">
+                                Select your budget
+                            </option>
+
+                            <option>
+                                Below ₹40,000
+                            </option>
+
+                            <option>
+                                ₹40,000 - ₹60,000
+                            </option>
+
+                            <option>
+                                ₹60,000 - ₹80,000
+                            </option>
+
+                            <option>
+                                ₹80,000 - ₹1,00,000
+                            </option>
+
+                            <option>
+                                Above ₹1,00,000
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="message">
+                            Your Enquiry
+                        </label>
+
+                        <textarea
+                            id="message"
+                            placeholder="Tell us what kind of laptop you are looking for..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-btn"
+                    >
+                        Submit Enquiry
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>LapTech</h3>
+
+        <p>
+            Your destination for laptops and technology.
+        </p>
+
+        <p>
+            © 2026 LapTech. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+</html>
+

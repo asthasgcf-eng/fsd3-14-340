@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LapTech | Laptop Store</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: #222;
+        }
+
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            background-color: #111827;
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #4f9cff;
+        }
+
+        nav ul {
+            list-style: none;
+
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            color: #4f9cff;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 500px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.6)
+                ),
+                url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #4f9cff;
+        }
+
+        .hero p {
+            font-size: 19px;
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 28px;
+
+            border-radius: 6px;
+
+            text-decoration: none;
+
+            font-size: 16px;
+        }
+
+        .primary-btn {
+            background-color: #4f9cff;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background-color: #2879d8;
+        }
+
+        .secondary-btn {
+            background-color: white;
+            color: #111827;
+        }
+
+        .secondary-btn:hover {
+            background-color: #eeeeee;
+        }
+
+
+        /* ================= GENERAL CONTAINER ================= */
+
+        .container {
+            width: 86%;
+            max-width: 1200px;
+
+            margin: 60px auto;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+        .section-title p {
+            color: #666;
+        }
+
+
+        /* ================= CATEGORIES ================= */
+
+        .categories {
+
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 20px;
+        }
+
+        .category {
+
+            background-color: white;
+
+            padding: 30px 20px;
+
+            text-align: center;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-7px);
+        }
+
+        .category-icon {
+            font-size: 42px;
+
+            margin-bottom: 15px;
+        }
+
+        .category h3 {
+            margin-bottom: 10px;
+        }
+
+        .category p {
+            color: #666;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+
+        /* ================= FEATURED PRODUCTS ================= */
+
+        .products {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+
+            background-color: white;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 4px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+
+            width: 100%;
+
+            height: 210px;
+
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h3 {
+            font-size: 20px;
+
+            margin-bottom: 7px;
+        }
+
+        .brand {
+            color: #777;
+
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #f5a623;
+
+            margin-bottom: 12px;
+        }
+
+        .price {
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .view-btn {
+
+            display: block;
+
+            width: 100%;
+
+            padding: 11px;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            background-color: #111827;
+
+            color: white;
+
+            border-radius: 6px;
+        }
+
+        .view-btn:hover {
+            background-color: #4f9cff;
+        }
+
+
+        /* ================= ABOUT PREVIEW ================= */
+
+        .about-preview {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 45px;
+
+            align-items: center;
+        }
+
+        .about-preview img {
+
+            width: 100%;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .about-text h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 18px;
+        }
+
+        .about-text p {
+
+            color: #555;
+
+            line-height: 1.8;
+
+            margin-bottom: 18px;
+        }
+
+
+        /* ================= CTA ================= */
+
+        .cta {
+
+            background-color: #111827;
+
+            color: white;
+
+            border-radius: 12px;
+
+            padding: 45px;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+
+            font-size: 32px;
+
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+
+            color: #ccc;
+
+            margin-bottom: 25px;
+
+            line-height: 1.6;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background-color: #111827;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 30px;
+
+            margin-top: 60px;
+        }
+
+        footer p {
+
+            color: #bbb;
+
+            margin-top: 8px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 900px) {
+
+            nav {
+                flex-direction: column;
+
+                gap: 15px;
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-preview {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Lap<span>Tech</span>
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="laptops.html">Laptops</a>
+            </li>
+
+            <li>
+                <a href="about.html">About Us</a>
+            </li>
+
+            <li>
+                <a href="enquiry.html">Enquiry</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Find Your <span>Perfect Laptop</span>
+            </h1>
+
+            <p>
+                Discover powerful laptops for students,
+                professionals, creators and gamers.
+                Choose the right technology for your needs.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    href="laptops.html"
+                    class="btn primary-btn"
+                >
+                    Explore Laptops
+                </a>
+
+                <a
+                    href="enquiry.html"
+                    class="btn secondary-btn"
+                >
+                    Make an Enquiry
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Shop By Category
+            </h2>
+
+            <p>
+                Find a laptop according to your requirements
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Student
+                </h3>
+
+                <p>
+                    Affordable and reliable laptops
+                    for study and college work.
+                </p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    💼
+                </div>
+
+                <h3>
+                    Business
+                </h3>
+
+                <p>
+                    Efficient laptops for office
+                    and professional work.
+                </p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    Gaming
+                </h3>
+
+                <p>
+                    Powerful laptops designed for
+                    gaming and entertainment.
+                </p>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-icon">
+                    👨‍💻
+                </div>
+
+                <h3>
+                    Coding
+                </h3>
+
+                <p>
+                    Performance-focused laptops
+                    for developers and programmers.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURED LAPTOPS ================= -->
+
+    <section class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Featured Laptops
+            </h2>
+
+            <p>
+                Explore some of our popular models
+            </p>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- Product 1 -->
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1602080858428-57174f9431cf?auto=format&fit=crop&w=800&q=80"
+                    alt="HP Laptop"
+                >
+
+                <div class="card-content">
+
+                    <h3>
+                        HP Pavilion 15
+                    </h3>
+
+                    <p class="brand">
+                        HP
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★ 4.7
+                    </p>
+
+                    <p class="price">
+                        ₹65,999
+                    </p>
+
+                    <a
+                        href="laptops.html"
+                        class="view-btn"
+                    >
+                        View Laptop
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 2 -->
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&w=800&q=80"
+                    alt="Dell Laptop"
+                >
+
+                <div class="card-content">
+
+                    <h3>
+                        Dell Inspiron 15
+                    </h3>
+
+                    <p class="brand">
+                        Dell
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★ 4.6
+                    </p>
+
+                    <p class="price">
+                        ₹62,490
+                    </p>
+
+                    <a
+                        href="laptops.html"
+                        class="view-btn"
+                    >
+                        View Laptop
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Product 3 -->
+
+            <div class="card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1541807084-5c52b6b3adef?auto=format&fit=crop&w=800&q=80"
+                    alt="Lenovo Laptop"
+                >
+
+                <div class="card-content">
+
+                    <h3>
+                        Lenovo IdeaPad Slim 5
+                    </h3>
+
+                    <p class="brand">
+                        Lenovo
+                    </p>
+
+                    <p class="rating">
+                        ★★★★★ 4.8
+                    </p>
+
+                    <p class="price">
+                        ₹58,990
+                    </p>
+
+                    <a
+                        href="laptops.html"
+                        class="view-btn"
+                    >
+                        View Laptop
+                    </a>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT PREVIEW ================= -->
+
+    <section class="container">
+
+        <div class="about-preview">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+                alt="LapTech Office"
+            >
+
+
+            <div class="about-text">
+
+                <h2>
+                    About LapTech
+                </h2>
+
+                <p>
+                    LapTech is a modern laptop store designed
+                    to make choosing the right laptop simple
+                    and convenient.
+                </p>
+
+                <p>
+                    Whether you are a student, professional,
+                    developer or gamer, we provide different
+                    laptop options for different requirements.
+                </p>
+
+                <a
+                    href="about.html"
+                    class="btn primary-btn"
+                >
+                    Learn More
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CALL TO ACTION ================= -->
+
+    <section class="container">
+
+        <div class="cta">
+
+            <h2>
+                Need Help Choosing a Laptop?
+            </h2>
+
+            <p>
+                Tell us your requirements and budget.
+                Our team can help you explore suitable options.
+            </p>
+
+            <a
+                href="enquiry.html"
+                class="btn primary-btn"
+            >
+                Send an Enquiry
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <h3>
+            LapTech
+        </h3>
+
+        <p>
+            Your destination for laptops and technology.
+        </p>
+
+        <p>
+            © 2026 LapTech. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+
