@@ -1,3 +1,5 @@
+import Book from "./components/Book";
+import Pen from "./components/Pen";
 const b1={
   picUrl: "https://m.media-amazon.com/images/I/61aYZnnMaHL._AC_UY327_FMwebp_QL65_.jpg",
   bname:"React Design Pattern",
@@ -14,21 +16,17 @@ const b2={
   rating: 4.5,
 };
 
-function Book(props){
-  const{bname,price,quantity,rating, picUrl}=props.book;
-  return(
-    <div className="book">
-      <img src={picUrl}
-      alt={bname}
-      />
-    <h1>{bname}</h1>
-    <h2>Price: {price}</h2>
-    <h3>Quantity: {quantity}</h3>
-    <h4>Rating: {rating}</h4>
-    <button>Buy Now</button>
-    </div>
-  );
-}
+const p1={
+  picUrl: "https://m.media-amazon.com/images/I/31VRPe1bjzL._AC_UL480_FMwebp_QL65_.jpg",
+  company:"Pilot",
+  price: 4670,
+};
+
+const p2={
+  picUrl: "https://m.media-amazon.com/images/I/41eBfPGQOzL._AC_UL480_FMwebp_QL65_.jpg",
+  company:"Trimax",
+  price: 2099,
+};
 
 export default function App(){
   
@@ -40,7 +38,10 @@ export default function App(){
       <Book book={b2}/>
       <Book book={b1}/>
       <Book book={b2}/>
-      
+      <Pen pen={p1}/>
+      <Pen pen={p2}/>
+      <Pen pen={p1}/>
+      <Pen pen={p2}/>
     </div>
     </>
   );

@@ -22,3 +22,30 @@
 3. it should be treated as html tag
 4. it must be closed 
 5. it must be single use
+
+## Object Distructure
+* Example: line no.18: const{bname,price,quantity,rating, picUrl}=props.book;
+* Does Not depend on order, if property is not available then it initializes with null.
+\\const {price, picUrl}= props.book;
+const {price, ..rest}=props.book;
+return rest;
+* Any components include style:
+1. External CSS= create class in index.css and use in component.
+2. Internl CSS= create property as object like:
+```
+const qtyStyle={
+    fontSize:"1rem",
+    color:"blue",
+    textAlign:"center",
+    backgroundColor:"lightblue",
+    padding:"10px",
+  };
+```
+then apply that style attribute and pass the object
+
+3. Inline CSS= in this method we use two curly brackets with style attributes;
+all the css property must be single word.
+* for example: text-align becomes textAlign
+
+### rafce=> arrow function
+### rfce=> normal function
