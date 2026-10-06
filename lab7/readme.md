@@ -49,3 +49,6 @@ all the css property must be single word.
 
 ### rafce=> arrow function
 ### rfce=> normal function
+
+
+### app.jsx must be in minimum code
