@@ -52,3 +52,5 @@ all the css property must be single word.
 
 
 ### app.jsx must be in minimum code
+
+* By default button in html is submit button.
