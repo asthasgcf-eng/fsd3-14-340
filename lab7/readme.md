@@ -54,3 +54,25 @@ all the css property must be single word.
 ### app.jsx must be in minimum code
 
 * By default button in html is submit button.
+
+## add tailwind to existing react project
+1. open terminal and go to project frontend folder
+2. install tailwind by 
+`npm install tailwindcss @tailwindcss/vite` 
+3. open vite.config.js
+4. add `import tailwindcss from "@tailwindcss/vite";` in first line
+5. add `tailwindcss()` after react()
+6. the file should look like
+
+``` import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
+import { defineConfig } from 'vite'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), tailwindcss()],
+});
+ ```
+
+7. open src/index.css and remove all contents, then add below line
+   ` @import "tailwindcss";` 
